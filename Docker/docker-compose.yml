@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+  webapp:
+    build:
+      context: ../design-patterns-application  # Adjust this path based on your project structure
+      dockerfile: ../design-patterns-application/Dockerfile
+    restart: unless-stopped
+    ports:
+      - "80:8080"
+    volumes:
+      - ../design-patterns-application/src:/application/src
+      - ../design-patterns-application/target:/application/target
+
